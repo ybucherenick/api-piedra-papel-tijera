@@ -31,6 +31,19 @@ module.exports = {
         }).catch((_err) => {
             return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message: _err });
         })
-    }
+    },
+
+
+    findAll : (req, res) => {
+        Movimiento.find().then((_data) => {
+            if (_data != null){
+                return res.status(httpStatus.OK).json({ movimiento: _data });
+            } else {
+                return res.status(httpStatus.NOT_FOUND).json({ message: 'No se encontró el movimiento' });
+            }
+        }).catch((_err) => {
+            return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message: _err });
+        })
+    },
 
 }

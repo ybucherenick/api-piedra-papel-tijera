@@ -13,5 +13,6 @@ router.post('/juego', juegoController.createJuego);
 router.post('/movimiento', movimientoController.createMovimienoto);
 router.get('/movimiento', movimientoController.findOneMovimiento);
 router.put('/movimiento', movimientoController.findOneAndUpdateMovimiento);
+router.get('/movimiento/todos', movimientoController.findAll);
 
 module.exports = router;
